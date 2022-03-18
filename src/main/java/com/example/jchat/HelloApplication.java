@@ -63,6 +63,8 @@ public class HelloApplication extends Application {
         text.setX((screenWidth/2)-(text.getWrappingWidth()/2));
         text.setY(150);
         // asdflkajsdflkj
+        // something
+
 
 
         // Login Box
