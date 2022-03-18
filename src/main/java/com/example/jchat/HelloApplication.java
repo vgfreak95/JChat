@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -25,14 +26,14 @@ public class HelloApplication extends Application {
     public void start(Stage primaryStage) throws IOException {
 
         Group root = new Group();
-        Group groot = new Group();
+        Group userPanel = new Group();
         GuiColors guiColors = new GuiColors();
 
         int screenWidth = 400;
         int screenHeight = 600;
 
         Scene scene = new Scene(root, screenWidth, screenHeight, guiColors.colorMap.get(GuiColors.Colors.LIGHT_BLUE));
-        Scene scene_blue = new Scene(groot, 900, 1000, guiColors.colorMap.get(GuiColors.Colors.BLUE));
+        Scene scene_mainMenu = new Scene(userPanel, 900, 1000, guiColors.colorMap.get(GuiColors.Colors.BLUE));
 
         // This will allow us to use a style sheet for looks
         System.out.println(System.getProperty("user.dir"));
@@ -45,7 +46,10 @@ public class HelloApplication extends Application {
         Text text = new Text();
         TextField login = new TextField();
         TextField pass = new TextField();
+        Text mainMenu = new Text();
+
         Button submit = new Button();
+        Button userList = new Button();
 
 
         root.getChildren().addAll(login, pass, text, submit);
@@ -61,7 +65,7 @@ public class HelloApplication extends Application {
         text.setWrappingWidth(265);
         text.setId("logo");
         text.setX((screenWidth/2)-(text.getWrappingWidth()/2));
-        text.setY(150); // from david
+        text.setY(150);
         // asdflkajsdflkj
         // something
 
@@ -93,12 +97,28 @@ public class HelloApplication extends Application {
         submit.setLayoutX((screenWidth/2)-(submit.getPrefWidth()/2));
         submit.setLayoutY(500);
 
+        // Main user control panel
+        userPanel.getChildren().addAll(userList, mainMenu);
+        mainMenu.setFill(Color.WHITE);
+        mainMenu.setText("Main Menu");
+        mainMenu.setFont(Font.font(50));
+        mainMenu.setWrappingWidth(265);
+        mainMenu.setX((scene_mainMenu.getWidth()/2)-(text.getWrappingWidth()/2));
+        mainMenu.setY(50);
+
+        // userList Button
+        userList.setText("User List");
+        userList.setPrefWidth(150);
+        userList.setPrefHeight(20);
+        userList.setLayoutX((scene_mainMenu.getWidth()/2)-(submit.getPrefWidth()/2));
+        userList.setLayoutY(500);
+
         // When Button Pressed
         submit.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
 
                 // Eventually Check SQL Database to make sure user EXISTS!
-                stage.setScene(scene_blue);
+                stage.setScene(scene_mainMenu);
                 stage.show();
 //                System.out.println(login.getText());
 //                System.out.println(pass.getText());
