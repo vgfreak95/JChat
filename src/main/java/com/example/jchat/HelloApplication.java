@@ -61,7 +61,7 @@ public class HelloApplication extends Application {
         text.setWrappingWidth(265);
         text.setId("logo");
         text.setX((screenWidth/2)-(text.getWrappingWidth()/2));
-        text.setY(150);
+        text.setY(150); // from david
         // asdflkajsdflkj
         // something
 
