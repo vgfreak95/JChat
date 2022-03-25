@@ -1,17 +1,18 @@
 #anchor {
-    -fx-background-color: rgb(141, 181, 247);
+    -fx-background-color: rgb(41, 43, 47);
 }
 
 
 .jchat-textfield {
     -fx-font: 20px "Arial";
-    -fx-background-color: rgb(230, 230, 230);
+    -fx-background-color: rgb(54, 57, 63);
+    -fx-text-fill: rgb(220, 220, 220);
     -fx-background-radius: 15px;
 }
 
 .jchat-label {
     -fx-font: 100px "Arial";
-    -fx-text-fill: rgb(255, 255, 255);
+    -fx-text-fill: rgb(220, 220, 220);
 }
 
 .jchat-label #signup {
@@ -21,6 +22,13 @@
 .jchat-button {
     -fx-font: 20px "Arial";
     -fx-background-radius: 20px;
+}
+
+.jchat-dash-button {
+    -fx-font: 20px "Arial";
+    -fx-background-radius: 20px;
+    -fx-background-color: rgb(54, 57, 63);
+    -fx-text-fill: rgb(220, 220, 220);
 }
 
 .hyper-link-label {
