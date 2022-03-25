@@ -4,13 +4,18 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" stylesheets="@app.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jchat.PreScreenController">
    <children>
-      <TextField id="textbox" layoutX="107.0" layoutY="332.0" prefHeight="36.0" prefWidth="185.0" promptText="Enter Login" stylesheets="@app.css" />
-      <TextField id="textbox" layoutX="107.0" layoutY="398.0" prefHeight="36.0" prefWidth="185.0" promptText="Enter Password" stylesheets="@app.css" />
-      <Button id="submit" layoutX="143.0" layoutY="467.0" mnemonicParsing="false" onMouseClicked="#onSubmitClick" prefHeight="36.0" prefWidth="114.0" stylesheets="@app.css" text="Login" />
-      <Label id="logo" layoutX="69.0" layoutY="64.0" stylesheets="@app.css" text="JChat" />
-      <Button id="submit" layoutX="50.0" layoutY="540.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="114.0" stylesheets="@app.css" text="Sign Up" />
+      <TextField id="user-field" layoutX="107.0" layoutY="332.0" prefHeight="36.0" prefWidth="185.0" promptText="Enter Login" styleClass="jchat-textfield" stylesheets="@app.css" />
+      <TextField id="password-field" layoutX="107.0" layoutY="398.0" prefHeight="36.0" prefWidth="185.0" promptText="Enter Password" styleClass="jchat-textfield" stylesheets="@app.css" />
+      <Button id="login" layoutX="143.0" layoutY="467.0" mnemonicParsing="false" onMouseClicked="#onLoginClick" prefHeight="36.0" prefWidth="114.0" styleClass="jchat-button" stylesheets="@app.css" text="Login" />
+      <Label id="logo" layoutX="69.0" layoutY="64.0" styleClass="jchat-label" stylesheets="@app.css" text="JChat" />
+      <Label id="createAccount" layoutX="92.0" layoutY="542.0" onMouseClicked="#onCreateAccountClick" styleClass="hyper-link-label" stylesheets="@app.css" text="Create New Account" textFill="#2b8c26" underline="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
