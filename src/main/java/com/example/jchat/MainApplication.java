@@ -29,8 +29,9 @@ public class MainApplication extends Application {
 
         GuiColors guiColors = new GuiColors();
 
-        int screenWidth = 400;
-        int screenHeight = 600;
+        // Screen resolutions
+        int preScreenWidth = 400, preScreenHeight =  600;
+
 
         // Root Setup
         loginRoot = FXMLLoader.load(getClass().getResource("login-screen.fxml"));
@@ -39,14 +40,13 @@ public class MainApplication extends Application {
         dashboardRoot = FXMLLoader.load(getClass().getResource("dashboard-screen.fxml"));
 
         // Scene setup
-        loginScene = new Scene(loginRoot, screenWidth, screenHeight);
-        signUpScene = new Scene(signUpRoot, screenWidth, screenHeight);
-        dashboardScene = new Scene(dashboardRoot, screenWidth, screenHeight);
-        chatroomScene = new Scene(chatroomRoot, screenWidth, screenHeight);
+        loginScene = new Scene(loginRoot, preScreenWidth, preScreenHeight);
+        signUpScene = new Scene(signUpRoot, preScreenWidth, preScreenHeight);
+        dashboardScene = new Scene(dashboardRoot, preScreenWidth, preScreenHeight);
+        chatroomScene = new Scene(chatroomRoot, preScreenWidth, preScreenHeight);
 
         // Stylesheet setup
         loginScene.getStylesheets().add(this.getClass().getResource("app.css").toExternalForm());
-
 
         // Create a stage and then set the scene
         mainStage = new Stage();

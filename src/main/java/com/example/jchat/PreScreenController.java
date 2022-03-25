@@ -41,6 +41,8 @@ public class PreScreenController {
     @FXML
     protected void onLoginClick() {
         System.out.println("User tried to login");
+        MainApplication.mainStage.setScene(MainApplication.loginScene);
+        MainApplication.mainStage.show();
     }
 
 
