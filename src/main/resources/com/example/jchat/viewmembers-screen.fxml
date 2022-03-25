@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="anchor" prefHeight="960.0" prefWidth="1080.0" stylesheets="@app.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jchat.PreScreenController">
+    <children>
+        <Label layoutX="92.0" styleClass="jchat-label" stylesheets="@app.css" text="Member Credentials" />
+        <ScrollPane layoutX="41.0" layoutY="114.0" prefHeight="792.0" prefWidth="998.0">
+            <content>
+                <Label prefHeight="69.0" prefWidth="632.0" text="Displays database of all user credentials ADMIN ACCESS ONLY">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                </Label>
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>

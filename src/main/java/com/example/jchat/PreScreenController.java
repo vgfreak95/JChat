@@ -49,5 +49,32 @@ public class PreScreenController {
         MainApplication.mainStage.show();
     }
 
+    @FXML
+    protected void onViewReportLogsClick() {
+        MainApplication.mainStage.setScene(MainApplication.reportedLogsScene);
+        MainApplication.mainStage.show();
+    }
+
+    @FXML
+    protected void onViewMembersClick() {
+        MainApplication.mainStage.setScene(MainApplication.viewMembersScene);
+        MainApplication.mainStage.show();
+    }
+    @FXML
+    protected void onModifyUserPermissionsClick() {
+        MainApplication.mainStage.setScene(MainApplication.modifyPermissionsScene);
+        MainApplication.mainStage.show();
+    }
+    @FXML
+    protected void onViewOpenRoomsClick() {
+        MainApplication.mainStage.setScene(MainApplication.openRoomsScene);
+        MainApplication.mainStage.show();
+    }
+    @FXML
+    protected void onSuspendUserAccess() {
+        MainApplication.mainStage.setScene(MainApplication.suspendAccessScene );
+        MainApplication.mainStage.show();
+    }
+
 
 }
