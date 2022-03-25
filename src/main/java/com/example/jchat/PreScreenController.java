@@ -11,14 +11,13 @@ public class PreScreenController {
 
     @FXML
     private Label welcomeText;
-    private Button submit;
+    private Button login;
     private Button createAccount;
 
 
     @FXML
     protected void onSubmitClick() {
         System.out.println("You pressed me!");
-
     }
 
 
@@ -29,8 +28,19 @@ public class PreScreenController {
     }
 
     @FXML
+    protected void onGoBackToSignInClick() {
+        MainApplication.mainStage.setScene(MainApplication.loginScene);
+        MainApplication.mainStage.show();
+    }
+
+    @FXML
     protected void onSignUpClick() {
         System.out.println("User tried to sign up");
+    }
+
+    @FXML
+    protected void onLoginClick() {
+        System.out.println("User tried to login");
     }
 
 
