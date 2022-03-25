@@ -1,4 +1,4 @@
-#anchor {
+.jchat-anchor {
     -fx-background-color: rgb(41, 43, 47);
 }
 
@@ -15,8 +15,8 @@
     -fx-text-fill: rgb(220, 220, 220);
 }
 
-.jchat-label #signup {
-    -fx-font: 80px "Arial";
+.jchat-label#signup {
+    -fx-font: 70px "Arial";
 }
 
 .jchat-button {

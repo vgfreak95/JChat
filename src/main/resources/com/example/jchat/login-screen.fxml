@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" stylesheets="@app.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jchat.PreScreenController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" styleClass="jchat-anchor" stylesheets="@app.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jchat.PreScreenController">
    <children>
       <TextField id="user-field" layoutX="107.0" layoutY="332.0" prefHeight="36.0" prefWidth="185.0" promptText="Enter Login" styleClass="jchat-textfield" stylesheets="@app.css" />
       <TextField id="password-field" layoutX="107.0" layoutY="398.0" prefHeight="36.0" prefWidth="185.0" promptText="Enter Password" styleClass="jchat-textfield" stylesheets="@app.css" />
