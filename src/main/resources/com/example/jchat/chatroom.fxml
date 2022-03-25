@@ -7,9 +7,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="1080.0" styleClass="jchat-anchor" stylesheets="@app.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="chat^anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jchat.DashboardController">
    <children>
-      <Label layoutX="6.0" layoutY="7.0" stylesheets="@app.css" text="Chat Room" textFill="#bfbfbf">
+      <Button layoutX="14.0" layoutY="920.0" mnemonicParsing="false" onMouseClicked="#onReturnToDashboardClick" stylesheets="@app.css" text="Return To Dashboard" />
+      <Label layoutX="6.0" layoutY="7.0" text="Chat Room">
          <font>
             <Font size="30.0" />
          </font>
@@ -20,9 +21,9 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <ScrollPane layoutX="28.0" layoutY="52.0" prefHeight="767.0" prefWidth="998.0" stylesheets="@app.css">
+      <ScrollPane layoutX="28.0" layoutY="52.0" prefHeight="767.0" prefWidth="998.0">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="753.0" prefWidth="980.0" styleClass="jchat-anchor">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="753.0" prefWidth="980.0">
                <children>
                   <Label layoutX="12.0" layoutY="15.0" prefHeight="39.0" prefWidth="149.0" text="Displays Messages" />
                </children>

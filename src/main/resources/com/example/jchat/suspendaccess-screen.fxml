@@ -6,8 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="anchor" prefHeight="960.0" prefWidth="1080.0" stylesheets="@app.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jchat.PreScreenController">
+<AnchorPane id="anchor" prefHeight="960.0" prefWidth="1080.0" stylesheets="@app.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jchat.DashboardController">
     <children>
+        <Button layoutX="14.0" layoutY="920.0" mnemonicParsing="false" onMouseClicked="#onReturnToDashboardClick" stylesheets="@app.css" text="Return To Dashboard" />
         <Label layoutX="92.0" styleClass="jchat-label" stylesheets="@app.css" text="Suspend Access" />
         <ScrollPane layoutX="41.0" layoutY="114.0" prefHeight="792.0" prefWidth="998.0">
             <content>
