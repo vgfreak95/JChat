@@ -15,23 +15,35 @@
     -fx-text-fill: rgb(220, 220, 220);
 }
 
-.jchat-label #signup {
-    -fx-font: 80px "Arial";
+.jchat-label#signup {
+    -fx-font: 70px "Arial";
 }
 
 .jchat-button {
     -fx-font: 20px "Arial";
     -fx-background-radius: 20px;
+    -fx-background-color: rgb(40, 78, 214);
+    -fx-text-fill: rgb(220, 220, 220);
 }
 
 .jchat-dash-button {
     -fx-font: 20px "Arial";
     -fx-background-radius: 20px;
-    -fx-background-color: rgb(54, 57, 63);
+    -fx-background-color: rgb(40, 78, 214);
     -fx-text-fill: rgb(220, 220, 220);
 }
 
+.jchat-button:hover {
+    -fx-background-color: rgb(40, 126, 220);
+    -fx-cursor: hand;
+}
+
+.jchat-dash-button:hover {
+    -fx-background-color: rgb(40, 126, 220);
+    -fx-cursor: hand;
+}
+
 .hyper-link-label {
-    -fx-text-fill: rgb(40, 132, 34);
+    -fx-text-fill: rgb(40, 65, 150);
     -fx-underline: True;
 }

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="anchor" prefHeight="960.0" prefWidth="1080.0" styleClass="jchat-anchor" stylesheets="@app.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jchat.PreScreenController">
+<AnchorPane prefHeight="960.0" prefWidth="1080.0" styleClass="jchat-anchor" stylesheets="@app.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jchat.PreScreenController">
    <children>
       <Label layoutX="289.0" layoutY="48.0" prefHeight="139.0" prefWidth="503.0" styleClass="jchat-label" stylesheets="@app.css" text="Dashboard" textFill="#d0d0d0" />
       <VBox alignment="CENTER" layoutX="401.0" layoutY="337.0" prefHeight="399.0" prefWidth="278.0">
@@ -15,33 +16,31 @@
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
-            <Button id="viewOpenRooms" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="0.0" styleClass="jchat-dash-button" text="View Open Rooms">
+            <Button id="viewOpenRooms" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onViewOpenRoomsClick" prefHeight="0.0" styleClass="jchat-dash-button" text="View Open Rooms">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button id="modifyUserPermission" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="0.0" styleClass="jchat-dash-button" text="Modify User Permissions">
+            <Button id="modifyUserPermission" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onModifyUserPermissionsClick" prefHeight="0.0" styleClass="jchat-dash-button" text="Modify User Permissions">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button id="suspendAccess" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="0.0" styleClass="jchat-dash-button" text="Suspend User Access">
+            <Button id="suspendAccess" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onSuspendUserAccess" prefHeight="0.0" styleClass="jchat-dash-button" text="Suspend User Access">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button id="viewReportLogs" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="0.0" styleClass="jchat-dash-button" text="View Reported Logs">
+            <Button id="viewReportLogs" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onViewReportLogsClick" prefHeight="0.0" styleClass="jchat-dash-button" text="View Reported Logs">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button id="viewMembers" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="0.0" styleClass="jchat-dash-button" text="View Memebers">
-               <VBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </VBox.margin>
-            </Button>
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="0.0" styleClass="jchat-dash-button" text="Button">
+            <Button id="viewMembers" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onViewMembersClick" prefHeight="0.0" styleClass="jchat-dash-button" text="View Memebers">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
