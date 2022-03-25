@@ -11,7 +11,13 @@ import java.io.IOException;
 
 public class MainApplication extends Application {
 
+    public static Parent loginRoot;
+    public static Parent signUpRoot;
 
+    public static Scene loginScene;
+    public static Scene signUpScene;
+
+    public static Stage mainStage;
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -22,22 +28,22 @@ public class MainApplication extends Application {
         int screenWidth = 400;
         int screenHeight = 600;
 
-        Parent loginRoot = FXMLLoader.load(getClass().getResource("login-screen.fxml"));
-        Parent chatroomRoot = FXMLLoader.load(getClass().getResource("chatroom.fxml"));
-        Parent dashboardRoot = FXMLLoader.load(getClass().getResource("dashboard-screen.fxml"));
+        // Root Setup
+        loginRoot = FXMLLoader.load(getClass().getResource("login-screen.fxml"));
+        signUpRoot = FXMLLoader.load(getClass().getResource("signup-screen.fxml"));
 
+        // Scene setup
+        loginScene = new Scene(loginRoot, screenWidth, screenHeight);
+        signUpScene = new Scene(signUpRoot, screenWidth, screenHeight);
 
-        Scene loginScene = new Scene(loginRoot, screenWidth, screenHeight);
-        Scene chatroom = new Scene(chatroomRoot, screenWidth, screenHeight);
-        Scene dashboard = new Scene(dashboardRoot, screenWidth, screenHeight);
-
-        // This will allow us to use a style sheet for looks
+        // Stylesheet setup
         loginScene.getStylesheets().add(this.getClass().getResource("app.css").toExternalForm());
 
+
         // Create a stage and then set the scene
-        Stage stage = new Stage();
-        stage.setScene(loginScene);
-        stage.show();
+        mainStage = new Stage();
+        mainStage.setScene(loginScene);
+        mainStage.show();
 
     }
 
