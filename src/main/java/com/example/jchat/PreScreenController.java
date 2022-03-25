@@ -16,6 +16,7 @@ public class PreScreenController {
         System.out.println("You pressed me!");
     }
 
+
     @FXML
     protected void onSignUpClick() {
         System.out.println("Signup was pressed");

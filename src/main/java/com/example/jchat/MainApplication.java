@@ -11,6 +11,8 @@ import java.io.IOException;
 
 public class MainApplication extends Application {
 
+
+
     @Override
     public void start(Stage primaryStage) throws IOException {
 
@@ -21,10 +23,13 @@ public class MainApplication extends Application {
         int screenHeight = 600;
 
         Parent loginRoot = FXMLLoader.load(getClass().getResource("login-screen.fxml"));
-        Parent signUpRoot = FXMLLoader.load(getClass().getResource("dashboard-screen.fxml"));
+        Parent chatroomRoot = FXMLLoader.load(getClass().getResource("chatroom.fxml"));
+        Parent dashboardRoot = FXMLLoader.load(getClass().getResource("dashboard-screen.fxml"));
+
 
         Scene loginScene = new Scene(loginRoot, screenWidth, screenHeight);
-        Scene signUpScene = new Scene(signUpRoot, screenWidth, screenHeight);
+        Scene chatroom = new Scene(chatroomRoot, screenWidth, screenHeight);
+        Scene dashboard = new Scene(dashboardRoot, screenWidth, screenHeight);
 
         // This will allow us to use a style sheet for looks
         loginScene.getStylesheets().add(this.getClass().getResource("app.css").toExternalForm());
