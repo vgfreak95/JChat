@@ -8,15 +8,14 @@
 <AnchorPane id="anchor" prefHeight="960.0" prefWidth="1080.0" stylesheets="@app.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jchat.PreScreenController">
    <children>
       <Label layoutX="253.0" layoutY="14.0" prefHeight="139.0" prefWidth="503.0" styleClass="jchat-label" stylesheets="@app.css" text="Dashboard" textFill="WHITE" />
-      <ToolBar layoutX="128.0" layoutY="430.0" prefHeight="186.0" prefWidth="754.0">
+      <ToolBar layoutX="128.0" layoutY="430.0" prefHeight="185.0" prefWidth="801.0">
         <items>
           <Button mnemonicParsing="false" onMouseClicked="#onNewChatClick" text="New Chat" />
-            <Button mnemonicParsing="false" text="View Reported Logs" />
-            <Button mnemonicParsing="false" text="View Memebers" />
-            <Button mnemonicParsing="false" text="Modify User Permissions" />
-            <Button mnemonicParsing="false" text="View Open Rooms" />
-            <Button mnemonicParsing="false" text="Suspend User Access" />
-            <Button mnemonicParsing="false" text="Button" />
+            <Button mnemonicParsing="false" onMouseClicked="#onViewReportLogsClick" text="View Reported Logs" />
+            <Button mnemonicParsing="false" onMouseClicked="#onViewMembersClick" text="View Memebers" />
+            <Button mnemonicParsing="false" onMouseClicked="#onModifyUserPermissionsClick" text="Modify User Permissions" />
+            <Button mnemonicParsing="false" onMouseClicked="#onViewOpenRoomsClick" text="View Open Rooms" />
+            <Button mnemonicParsing="false" onMouseClicked="#onSuspendUserAccess" text="Suspend User Access" />
         </items>
       </ToolBar>
    </children>
