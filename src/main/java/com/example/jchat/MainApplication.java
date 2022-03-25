@@ -29,10 +29,8 @@ public class MainApplication extends Application {
 
         GuiColors guiColors = new GuiColors();
 
-        int screenWidth = 400;
-        int screenHeight = 600;
-        int dashWidth = 1080;
-        int dashHeight = 960;
+        int preScreenWidth = 400, preScreenHeight = 600;
+        int dashWidth = 1080, dashHeight = 960;
 
         // Root Setup
         loginRoot = FXMLLoader.load(getClass().getResource("login-screen.fxml"));
@@ -43,8 +41,8 @@ public class MainApplication extends Application {
 
 
         // Scene setup
-        loginScene = new Scene(loginRoot, screenWidth, screenHeight);
-        signUpScene = new Scene(signUpRoot, screenWidth, screenHeight);
+        loginScene = new Scene(loginRoot, preScreenWidth, preScreenHeight);
+        signUpScene = new Scene(signUpRoot, preScreenWidth, preScreenHeight);
         dashboardScene = new Scene(dashboardRoot,dashWidth, dashHeight);
         chatroomScene = new Scene(chatroomRoot, dashWidth, dashHeight);
 
