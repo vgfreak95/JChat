@@ -11,7 +11,7 @@ public class PreScreenController {
 
     @FXML
     private Label welcomeText;
-    private Button submit;
+    private Button login;
     private Button createAccount;
 
 
@@ -29,8 +29,8 @@ public class PreScreenController {
     }
 
     @FXML
-    protected void onSignUpClick() {
-        System.out.println("User tried to sign up");
+    protected void onLoginClick() {
+        System.out.println("User tried to log in");
     }
 
 
