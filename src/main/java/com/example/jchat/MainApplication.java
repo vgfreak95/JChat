@@ -31,6 +31,8 @@ public class MainApplication extends Application {
 
         int screenWidth = 400;
         int screenHeight = 600;
+        int dashWidth = 1080;
+        int dashHeight = 960;
 
         // Root Setup
         loginRoot = FXMLLoader.load(getClass().getResource("login-screen.fxml"));
@@ -38,11 +40,13 @@ public class MainApplication extends Application {
         chatroomRoot = FXMLLoader.load(getClass().getResource("chatroom.fxml"));
         dashboardRoot = FXMLLoader.load(getClass().getResource("dashboard-screen.fxml"));
 
+
+
         // Scene setup
         loginScene = new Scene(loginRoot, screenWidth, screenHeight);
         signUpScene = new Scene(signUpRoot, screenWidth, screenHeight);
-        dashboardScene = new Scene(dashboardRoot, screenWidth, screenHeight);
-        chatroomScene = new Scene(chatroomRoot, screenWidth, screenHeight);
+        dashboardScene = new Scene(dashboardRoot,dashWidth, dashHeight);
+        chatroomScene = new Scene(chatroomRoot, dashWidth, dashHeight);
 
         // Stylesheet setup
         loginScene.getStylesheets().add(this.getClass().getResource("app.css").toExternalForm());

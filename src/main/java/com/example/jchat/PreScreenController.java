@@ -37,10 +37,16 @@ public class PreScreenController {
     protected void onSignUpClick() {
         System.out.println("User tried to sign up");
     }
-    // This does nothing
+
     @FXML
     protected void onLoginClick() {
-        System.out.println("User tried to login");
+        MainApplication.mainStage.setScene(MainApplication.dashboardScene);
+        MainApplication.mainStage.show();
+    }
+    @FXML
+    protected void onNewChatClick() {
+        MainApplication.mainStage.setScene(MainApplication.chatroomScene);
+        MainApplication.mainStage.show();
     }
 
 
