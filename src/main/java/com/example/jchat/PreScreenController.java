@@ -76,5 +76,10 @@ public class PreScreenController {
         MainApplication.mainStage.show();
     }
 
+    @FXML
+    protected void onReturnToDashboardClick() {
+        MainApplication.mainStage.setScene(MainApplication.dashboardScene );
+        MainApplication.mainStage.show();
+    }
 
 }
