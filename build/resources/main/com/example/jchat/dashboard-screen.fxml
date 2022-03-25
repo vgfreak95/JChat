@@ -5,7 +5,7 @@
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="anchor" prefHeight="960.0" prefWidth="1080.0" stylesheets="@app.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jchat.PreScreenController">
+<AnchorPane id="anchor" prefHeight="960.0" prefWidth="1080.0" stylesheets="@app.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jchat.DashboardController">
    <children>
       <Label layoutX="253.0" layoutY="14.0" prefHeight="139.0" prefWidth="503.0" styleClass="jchat-label" stylesheets="@app.css" text="Dashboard" textFill="WHITE" />
       <ToolBar layoutX="128.0" layoutY="430.0" prefHeight="185.0" prefWidth="801.0">
