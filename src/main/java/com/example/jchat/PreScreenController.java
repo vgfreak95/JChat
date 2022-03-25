@@ -18,6 +18,7 @@ public class PreScreenController {
     @FXML
     protected void onSubmitClick() {
         System.out.println("You pressed me!");
+
     }
 
 

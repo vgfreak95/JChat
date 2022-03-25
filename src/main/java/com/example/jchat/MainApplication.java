@@ -13,9 +13,13 @@ public class MainApplication extends Application {
 
     public static Parent loginRoot;
     public static Parent signUpRoot;
+    public static Parent chatroomRoot;
+    public static Parent dashboardRoot;
 
     public static Scene loginScene;
     public static Scene signUpScene;
+    public static Scene chatroomScene;
+    public static Scene dashboardScene;
 
     public static Stage mainStage;
 
@@ -31,10 +35,14 @@ public class MainApplication extends Application {
         // Root Setup
         loginRoot = FXMLLoader.load(getClass().getResource("login-screen.fxml"));
         signUpRoot = FXMLLoader.load(getClass().getResource("signup-screen.fxml"));
+        chatroomRoot = FXMLLoader.load(getClass().getResource("chatroom.fxml"));
+        dashboardRoot = FXMLLoader.load(getClass().getResource("dashboard-screen.fxml"));
 
         // Scene setup
         loginScene = new Scene(loginRoot, screenWidth, screenHeight);
         signUpScene = new Scene(signUpRoot, screenWidth, screenHeight);
+        dashboardScene = new Scene(dashboardRoot, screenWidth, screenHeight);
+        chatroomScene = new Scene(chatroomRoot, screenWidth, screenHeight);
 
         // Stylesheet setup
         loginScene.getStylesheets().add(this.getClass().getResource("app.css").toExternalForm());
