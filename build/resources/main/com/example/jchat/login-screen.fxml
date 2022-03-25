@@ -10,7 +10,7 @@
    <children>
       <TextField id="user-field" layoutX="107.0" layoutY="332.0" prefHeight="36.0" prefWidth="185.0" promptText="Enter Login" styleClass="jchat-textfield" stylesheets="@app.css" />
       <TextField id="password-field" layoutX="107.0" layoutY="398.0" prefHeight="36.0" prefWidth="185.0" promptText="Enter Password" styleClass="jchat-textfield" stylesheets="@app.css" />
-      <Button id="login" layoutX="143.0" layoutY="467.0" mnemonicParsing="false" onMouseClicked="#onSubmitClick" prefHeight="36.0" prefWidth="114.0" styleClass="jchat-button" stylesheets="@app.css" text="Login" />
+      <Button id="login" layoutX="143.0" layoutY="467.0" mnemonicParsing="false" onMouseClicked="#onLoginClick" prefHeight="36.0" prefWidth="114.0" styleClass="jchat-button" stylesheets="@app.css" text="Login" />
       <Label id="logo" layoutX="69.0" layoutY="64.0" styleClass="jchat-label" stylesheets="@app.css" text="JChat" />
       <Label id="createAccount" layoutX="92.0" layoutY="542.0" onMouseClicked="#onCreateAccountClick" styleClass="hyper-link-label" stylesheets="@app.css" text="Create New Account" textFill="#2b8c26" underline="true">
          <font>
