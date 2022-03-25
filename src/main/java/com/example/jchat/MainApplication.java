@@ -54,8 +54,6 @@ public class MainApplication extends Application {
         viewMembersRoot = FXMLLoader.load(getClass().getResource("viewmembers-screen.fxml"));
         reportedLogsRoot = FXMLLoader.load(getClass().getResource("reportedlogs-screen.fxml"));
 
-
-
         // Scene setup
         loginScene = new Scene(loginRoot, preScreenWidth, preScreenHeight);
         signUpScene = new Scene(signUpRoot, preScreenWidth, preScreenHeight);

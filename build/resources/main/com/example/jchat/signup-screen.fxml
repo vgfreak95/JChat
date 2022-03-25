@@ -6,11 +6,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="anchor" prefHeight="600.0" prefWidth="400.0" stylesheets="@app.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jchat.PreScreenController">
+<AnchorPane id="anchor" prefHeight="600.0" prefWidth="400.0" styleClass="jchat-anchor" stylesheets="@app.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jchat.PreScreenController">
    <children>
       <TextField layoutX="102.0" layoutY="264.0" prefHeight="36.0" prefWidth="196.0" promptText="Enter Username" styleClass="jchat-textfield" stylesheets="@app.css" />
       <TextField layoutX="102.0" layoutY="318.0" prefHeight="36.0" prefWidth="196.0" promptText="Enter Password" styleClass="jchat-textfield" stylesheets="@app.css" />
-      <Label id="signup" layoutX="29.0" layoutY="43.0" styleClass="jchat-label" text="Sign Up" />
+      <Label id="signup" layoutX="75.0" layoutY="60.0" styleClass="jchat-label" text="Sign Up" />
       <Button id="signup" layoutX="151.0" layoutY="388.0" mnemonicParsing="false" onMouseClicked="#onSignUpClick" styleClass="jchat-button" text="Sign Up" />
       <Label id="backToLogin" layoutX="91.0" layoutY="515.0" onMouseClicked="#onGoBackToSignInClick" prefHeight="46.0" prefWidth="230.0" styleClass="hyper-link-label" stylesheets="@app.css" text="Back to Login Screen">
          <font>
