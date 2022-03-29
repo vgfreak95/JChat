@@ -12,7 +12,7 @@
     <children>
         <Button layoutX="14.0" layoutY="920.0" mnemonicParsing="false" onMouseClicked="#onReturnToDashboardClick" styleClass="jchat-dash-button" stylesheets="@app.css" text="Return To Dashboard" />
         <Label layoutX="92.0" styleClass="jchat-label" stylesheets="@app.css" text="Ongoing Chat Rooms" />
-        <ScrollPane blendMode="OVERLAY" layoutX="41.0" layoutY="114.0" prefHeight="792.0" prefWidth="998.0">
+        <ScrollPane blendMode="OVERLAY" layoutX="38.0" layoutY="114.0" prefHeight="788.0" prefWidth="1005.0">
             <content>
                 <Label prefHeight="128.0" prefWidth="997.0" text="Displays all open chat rooms and actives users in room" textFill="RED">
                     <font>

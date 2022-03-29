@@ -22,28 +22,29 @@
 .jchat-button {
     -fx-font: 20px "Arial";
     -fx-background-radius: 20px;
-    -fx-background-color: rgb(40, 78, 214);
+    -fx-background-color: rgb(114, 70, 143);
     -fx-text-fill: rgb(220, 220, 220);
 }
 
 .jchat-dash-button {
     -fx-font: 20px "Arial";
     -fx-background-radius: 20px;
-    -fx-background-color: rgb(40, 78, 214);
+    -fx-background-color: rgb(114, 70, 143);
     -fx-text-fill: rgb(220, 220, 220);
 }
 
 .jchat-button:hover {
-    -fx-background-color: rgb(40, 126, 220);
+    -fx-background-color: rgb(185, 113, 232);
     -fx-cursor: hand;
 }
 
 .jchat-dash-button:hover {
-    -fx-background-color: rgb(40, 126, 220);
+    -fx-background-color: rgb(185, 113, 232);
     -fx-cursor: hand;
 }
 
 .hyper-link-label {
     -fx-text-fill: rgb(40, 65, 150);
     -fx-underline: True;
+    -fx-cursor: hand;
 }
