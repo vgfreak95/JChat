@@ -7,27 +7,24 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="chat^anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="chat^anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="1080.0" styleClass="jchat-anchor" stylesheets="@app.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jchat.DashboardController">
    <children>
-      <Label layoutX="6.0" layoutY="7.0" text="Chat Room">
+      <Button layoutX="14.0" layoutY="920.0" mnemonicParsing="false" onMouseClicked="#onReturnToDashboardClick" styleClass="jchat-dash-button" stylesheets="@app.css" text="Return To Dashboard" />
+      <Label layoutX="6.0" layoutY="7.0" styleClass="jchat-label" stylesheets="@app.css" text="Chat Room">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
       <TextField id="message-field" layoutX="53.0" layoutY="830.0" prefHeight="83.0" prefWidth="975.0" promptText="Type here..." styleClass="jchat-textfield" stylesheets="@app.css" />
-      <Button id="send" layoutX="944.0" layoutY="913.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="84.0" styleClass="jchat-button" text="Send">
+      <Button id="send" layoutX="944.0" layoutY="920.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="84.0" styleClass="jchat-dash-button" stylesheets="@app.css" text="Send">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <ScrollPane layoutX="28.0" layoutY="52.0" prefHeight="767.0" prefWidth="998.0">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="753.0" prefWidth="980.0">
-               <children>
-                  <Label layoutX="12.0" layoutY="15.0" prefHeight="39.0" prefWidth="149.0" text="Displays Messages" />
-               </children>
-            </AnchorPane>
-        </content>
+      <ScrollPane blendMode="OVERLAY" layoutX="28.0" layoutY="136.0" prefHeight="683.0" prefWidth="998.0">
+         <content>
+            <Label prefHeight="39.0" prefWidth="149.0" text="Displays Messages" textFill="RED" />
+         </content>
       </ScrollPane>
    </children>
 </AnchorPane>

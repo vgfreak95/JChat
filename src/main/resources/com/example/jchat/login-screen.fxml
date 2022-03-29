@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -8,19 +9,25 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" styleClass="jchat-anchor" stylesheets="@app.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jchat.PreScreenController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" styleClass="jchat-anchor" stylesheets="@app.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jchat.PreScreenController">
    <children>
       <TextField id="user-field" layoutX="107.0" layoutY="332.0" prefHeight="36.0" prefWidth="185.0" promptText="Enter Login" styleClass="jchat-textfield" stylesheets="@app.css" />
       <TextField id="password-field" layoutX="107.0" layoutY="398.0" prefHeight="36.0" prefWidth="185.0" promptText="Enter Password" styleClass="jchat-textfield" stylesheets="@app.css" />
-      <Button id="login" layoutX="143.0" layoutY="467.0" mnemonicParsing="false" onMouseClicked="#onLoginClick" prefHeight="36.0" prefWidth="114.0" styleClass="jchat-button" stylesheets="@app.css" text="Login" />
+      <Button id="login" layoutX="143.0" layoutY="467.0" mnemonicParsing="false" onMouseClicked="#onLoginClick" prefHeight="36.0" prefWidth="114.0" styleClass="jchat-button" stylesheets="@app.css" text="Login">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <Label id="createAccount" layoutX="92.0" layoutY="542.0" onMouseClicked="#onCreateAccountClick" styleClass="hyper-link-label" stylesheets="@app.css" text="Create New Account" textFill="#2b8c26" underline="true">
          <font>
             <Font size="24.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Label>
-      <ImageView fitHeight="178.0" fitWidth="338.0" layoutX="31.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="169.0" fitWidth="297.0" layoutX="52.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/JChatLogo.png" />
+            <Image url="@images/JchatLogo.png" />
          </image>
       </ImageView>
    </children>
