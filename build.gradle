@@ -23,6 +23,7 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
+
 application {
     mainModule = 'com.example.jchat'
     mainClass = 'com.example.jchat.MainApplication'
@@ -37,6 +38,7 @@ dependencies {
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+
 }
 
 test {
