@@ -41,7 +41,7 @@ public class MainApplication extends Application {
         GuiColors guiColors = new GuiColors();
 
         int preScreenWidth = 400, preScreenHeight = 600;
-        int dashWidth = 1080, dashHeight = 960;
+        int dashWidth = 1280, dashHeight = 960;
 
         // Root Setup
         loginRoot = FXMLLoader.load(getClass().getResource("login-screen.fxml"));
