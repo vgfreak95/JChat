@@ -1,6 +1,97 @@
 .jchat-anchor {
     -fx-background-color: rgb(41, 43, 47);
+    /*
+    -fx-border-color: rgb(41, 43, 47);
+    */
+    -fx-box-border: transparent;
 }
+
+.scroll-bar {
+    /*
+    -fx-background-color: rgb(255, 0, 0);
+    */
+    -fx-background-color: rgb(41, 43, 47);
+    /*
+    -fx-box-border: transparent;
+    -fx-fit-to-width: true;
+    -fx-font-size: 20px;
+    -fx-text-fill: rgb(255, 0, 0);
+    */
+}
+
+.scroll-bar:vertical {
+/*
+    -fx-padding: 5px;
+    */
+}
+
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color :derive(black, 17.5%);
+    -fx-background-insets : 1.0, 0.0, 0.0;
+    -fx-background-radius : 2.0em;
+    /*
+    */
+}
+
+.scroll-bar:horizontal .thumb:hover,
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color :derive(#4D4C4F,10.0%);
+    -fx-background-insets : 1.0, 0.0, 0.0;
+    -fx-background-radius : 2.0em;
+    /*
+    */
+}
+
+.scroll-pane > .viewport {
+   -fx-background-color: transparent;
+   -fx-background-color: derive(#292B2F, 15.0%);
+}
+
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    /*
+    -fx-background-color :transparent;
+    */
+    -fx-background-color: derive(#292B2F, 10.0%);
+    -fx-border-color :transparent;
+    -fx-background-insets: -1.0, 0.0, 0.0;
+    -fx-background-radius : 0.0em;
+    -fx-border-radius :2.0em;
+}
+
+
+.scroll-bar:horizontal .increment-button ,
+.scroll-bar:horizontal .decrement-button {
+    -fx-background-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-padding :0.0 0.0 10.0 0.0;
+
+}
+
+.scroll-bar:vertical .increment-button ,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-padding :0.0 10.0 0.0 0.0;
+
+}
+
+ .scroll-bar .increment-arrow,
+ .scroll-bar .decrement-arrow{
+    -fx-shape : " ";
+    -fx-padding :0.15em 0.0;
+}
+
+jchat-scroll-vertical:vertical .increment-button {
+    -fx-background-color: rgb(255, 0, 0);
+    -fx-border-color: rgb(255, 0, 0);
+    -fx-font-size: 20px;
+    -fx-padding: 100;
+}
+
 
 .jchat-dash-vbox {
     -fx-background-color: rgb(31, 33, 37);
@@ -14,7 +105,7 @@
 }
 
 .jchat-label {
-    -fx-font: 100px "Arial";
+    -fx-font: 30px "Arial";
     -fx-text-fill: rgb(220, 220, 220);
 }
 
@@ -30,11 +121,11 @@
 }
 
 .jchat-dash-button {
-    -fx-font: 25px "Arial";
     /*
     -fx-background-radius: 20px;
     -fx-background-color: rgb(114, 70, 143);
     */
+    -fx-font: 25px "Arial";
     -fx-text-fill: rgb(220, 220, 220);
     -fx-background-color: rgb(31, 33, 37);
 }
@@ -45,10 +136,10 @@
 }
 
 .jchat-dash-button:hover {
-    -fx-background-color: rgb(35, 38, 42);
     /*
     -fx-background-color: rgb(185, 113, 232);
     */
+    -fx-background-color: rgb(35, 38, 42);
     -fx-cursor: hand;
 }
 
