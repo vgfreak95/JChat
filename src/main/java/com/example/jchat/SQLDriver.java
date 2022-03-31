@@ -5,6 +5,9 @@ package com.example.jchat;
 import java.sql.*;
 
 public class SQLDriver {
+    Connection conn = createConnection("25.95.108.108", "3307", "csc340", "testuser", "1234");
+    public SQLDriver() throws SQLException {
+    }
 
 
     public Connection conn = createConnection("25.54.165.230","3306","csc340","testuser", "1234");
@@ -62,5 +65,20 @@ public class SQLDriver {
             e.printStackTrace();
 //            System.out.println("There was an error trying to connect to the database...\n" + e);
         }
+    }
+    public Boolean loginUser(Connection conn, String username, String password) throws SQLException {
+        /**
+         * iterate all users and passwords until match found
+         * if no found return false
+         * if return true
+         */
+        Statement statement = conn.createStatement();
+        ResultSet result = statement.executeQuery("SELECT * FROM user_login;");
+        while(result.next()){
+            if(result.getString("username").equals(username) &&  result.getString("pass").equals(password)){
+                return true;
+            }
+        }
+        return false;
     }
 }
