@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="chat^anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="1080.0" styleClass="jchat-anchor" stylesheets="@app.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jchat.DashboardController">
+   <children>
+      <Button layoutX="14.0" layoutY="920.0" mnemonicParsing="false" onMouseClicked="#onReturnToDashboardClick" styleClass="jchat-dash-button" stylesheets="@app.css" text="Return To Dashboard" />
+      <Label layoutX="6.0" layoutY="7.0" styleClass="jchat-label" stylesheets="@app.css" text="Chat Room">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <TextField id="message-field" layoutX="53.0" layoutY="830.0" prefHeight="83.0" prefWidth="975.0" promptText="Type here..." styleClass="jchat-textfield" stylesheets="@app.css" />
+      <Button id="send" layoutX="944.0" layoutY="920.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="84.0" styleClass="jchat-dash-button" stylesheets="@app.css" text="Send">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <ScrollPane blendMode="OVERLAY" layoutX="28.0" layoutY="136.0" prefHeight="683.0" prefWidth="998.0">
+         <content>
+            <Label prefHeight="39.0" prefWidth="149.0" text="Displays Messages" textFill="RED" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
