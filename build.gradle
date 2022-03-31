@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'application'
+    id 'java-library'
     id 'org.openjfx.javafxplugin' version '0.0.10'
     id 'org.beryx.jlink' version '2.24.1'
 }
@@ -38,6 +39,7 @@ javafx {
 
 dependencies {
     implementation('mysql:mysql-connector-java:8.0.28')
+    implementation('org.apache.commons:commons-lang3:3.12.0')
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 

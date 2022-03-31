@@ -3,14 +3,14 @@ package com.example.jchat;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 // local classes
 import com.example.jchat.MainApplication;
-import javafx.scene.control.TextField;
 import com.example.jchat.SQLDriver;
-
-import java.sql.Connection;
-import java.sql.SQLException;
+import com.example.jchat.User;
 
 public class PreScreenController {
 
@@ -23,10 +23,7 @@ public class PreScreenController {
     private TextField user_login_field, user_password_field;
 
     @FXML
-    private TextField user_signup_field;
-
-    @FXML
-    private TextField pass_signup_field;
+    private TextField user_signup_field, pass_signup_field;
 
 
     @FXML
@@ -58,6 +55,7 @@ public class PreScreenController {
         SQLDriver sqld = new SQLDriver();
         Boolean correctInfo = sqld.loginUser(sqld.conn, user_login_field.getText().toString(), user_password_field.getText().toString());
         if(correctInfo) {
+            User.username = user_login_field.getText().toString();
             MainApplication.mainStage.setScene(MainApplication.dashboardScene);
             MainApplication.mainStage.show();
         }
