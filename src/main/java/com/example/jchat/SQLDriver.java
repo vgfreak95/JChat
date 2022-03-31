@@ -5,7 +5,10 @@ package com.example.jchat;
 import java.sql.*;
 
 public class SQLDriver {
-    Connection conn = createConnection("25.95.108.108", "3307", "csc340", "testuser", "1234");
+
+    private String username;
+
+    Connection conn = createConnection("localhost", "3307", "csc340", "root", "");
     public SQLDriver() throws SQLException {
     }
 
@@ -36,6 +39,7 @@ public class SQLDriver {
         statement = conn.createStatement();
         String sqlQueryFormat = String.format("INSERT INTO user_login (username, pass, permission) VALUES ('%s', '%s', 'default');", user, pass);
         statement.executeUpdate(sqlQueryFormat);
+        this.username = user;
         return true;
 
     }

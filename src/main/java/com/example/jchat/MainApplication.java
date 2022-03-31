@@ -37,8 +37,8 @@ public class MainApplication extends Application {
     public static Scene suspendAccessScene;
     public static Scene viewMembersScene;
 
-
     public static Stage mainStage;
+
 
     @Override
     public void start(Stage primaryStage) throws IOException, SQLException {

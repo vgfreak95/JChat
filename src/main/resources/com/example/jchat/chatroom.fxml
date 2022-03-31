@@ -4,7 +4,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
@@ -52,13 +52,13 @@
       </VBox>
       <Pane id="pane" fx:id="pane" layoutX="355.0" layoutY="18.0" prefHeight="943.0" prefWidth="926.0">
          <children>
-            <TextField id="message-field" layoutX="20.0" layoutY="837.0" prefHeight="83.0" prefWidth="886.0" promptText="Type here..." styleClass="jchat-textfield" stylesheets="@app.css" />
+            <TextField id="message_field" fx:id="message_field" layoutX="20.0" layoutY="837.0" onAction="#sendMessage" prefHeight="83.0" prefWidth="886.0" promptText="Type here..." styleClass="jchat-textfield" stylesheets="@app.css" />
             <Label layoutX="20.0" prefHeight="39.0" prefWidth="250.0" styleClass="jchat-label" stylesheets="@app.css" text="Chat Room Name">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
-            <ScrollPane id="scrollPane" fx:id="scrollPane" hbarPolicy="NEVER" layoutX="20.0" layoutY="47.0" minViewportWidth="200.0" onMouseClicked="#onScrollUp" onScroll="#onScrollDown" onScrollStarted="#onScrollUp" prefHeight="778.0" prefWidth="886.0" styleClass="jchat-anchor" stylesheets="@app.css" vbarPolicy="ALWAYS" />
+            <ListView id="listView" fx:id="listView" prefHeight="776.0" prefWidth="872.0" styleClass="jchat-listview" stylesheets="@app.css" />
          </children>
       </Pane>
    </children>
