@@ -6,6 +6,11 @@ import java.sql.*;
 
 public class SQLDriver {
 
+
+    public Connection conn = createConnection("25.54.165.230","3306","csc340","testuser", "1234");
+    public SQLDriver() throws SQLException {
+    }
+
     public Connection createConnection(String ip, String port, String schema, String user, String pass) throws SQLException {
         String connectionFormat = String.format("jdbc:mysql://%s:%s/%s", ip, port, schema);
         try {
@@ -31,7 +36,7 @@ public class SQLDriver {
 
         // When the username doesn't exist
         statement = conn.createStatement();
-        String sqlQueryFormat = String.format("INSERT INTO user_login (username, pass, permission) VALUES ('%s', %s, 'default');", user, pass);
+        String sqlQueryFormat = String.format("INSERT INTO user_login (username, pass, permission) VALUES ('%s', '%s', 'default');", user, pass);
         statement.executeUpdate(sqlQueryFormat);
         return true;
 
