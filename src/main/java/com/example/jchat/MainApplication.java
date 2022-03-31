@@ -5,9 +5,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
+//import com.mysql.cj.jdbc.Driver;
+
+
+
 
 public class MainApplication extends Application {
 
@@ -35,11 +39,10 @@ public class MainApplication extends Application {
     public static Stage mainStage;
 
     @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void start(Stage primaryStage) throws IOException, SQLException {
 
 
         GuiColors guiColors = new GuiColors();
-
         int preScreenWidth = 400, preScreenHeight = 600;
         int dashWidth = 1280, dashHeight = 960;
 

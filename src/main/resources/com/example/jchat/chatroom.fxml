@@ -58,7 +58,7 @@
                   <Font size="30.0" />
                </font>
             </Label>
-            <ScrollPane id="scrollPane" fx:id="scrollPane" hbarPolicy="NEVER" layoutX="20.0" layoutY="47.0" onMouseClicked="#onScrollUp" onScroll="#onScrollDown" onScrollStarted="#onScrollUp" prefHeight="778.0" prefWidth="886.0" styleClass="jchat-anchor" stylesheets="@app.css" vbarPolicy="ALWAYS" />
+            <ScrollPane id="scrollPane" fx:id="scrollPane" hbarPolicy="NEVER" layoutX="20.0" layoutY="47.0" minViewportWidth="200.0" onMouseClicked="#onScrollUp" onScroll="#onScrollDown" onScrollStarted="#onScrollUp" prefHeight="778.0" prefWidth="886.0" styleClass="jchat-anchor" stylesheets="@app.css" vbarPolicy="ALWAYS" />
          </children>
       </Pane>
    </children>

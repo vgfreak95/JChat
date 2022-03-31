@@ -6,6 +6,11 @@ import javafx.scene.control.Label;
 
 // local classes
 import com.example.jchat.MainApplication;
+import javafx.scene.control.TextField;
+import com.example.jchat.SQLDriver;
+
+import java.sql.Connection;
+import java.sql.SQLException;
 
 public class PreScreenController {
 
@@ -13,6 +18,12 @@ public class PreScreenController {
     private Label welcomeText;
     private Button login;
     private Button createAccount;
+
+    @FXML
+    private TextField user_signup_field;
+
+    @FXML
+    private TextField pass_signup_field;
 
 
     @FXML
@@ -34,8 +45,10 @@ public class PreScreenController {
     }
 
     @FXML
-    protected void onSignUpClick() {
-        System.out.println("User tried to sign up");
+    protected void onSignUpClick() throws SQLException {
+        SQLDriver sqld = new SQLDriver();
+        Connection conn = sqld.createConnection("25.54.165.230","3306","csc340","testuser", "1234");
+        sqld.signUpUser(conn, user_signup_field.getText().toString(), pass_signup_field.getText().toString());
     }
 
     @FXML
