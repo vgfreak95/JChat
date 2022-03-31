@@ -15,6 +15,8 @@ import java.sql.SQLException;
 
 public class MainApplication extends Application {
 
+    public static Connection conn;
+
     public static Parent loginRoot;
     public static Parent signUpRoot;
     public static Parent chatroomRoot;
@@ -40,7 +42,6 @@ public class MainApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException, SQLException {
-
 
         GuiColors guiColors = new GuiColors();
         int preScreenWidth = 400, preScreenHeight = 600;

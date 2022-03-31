@@ -20,6 +20,9 @@ public class PreScreenController {
     private Button createAccount;
 
     @FXML
+    private TextField user_login_field, user_password_field;
+
+    @FXML
     private TextField user_signup_field;
 
     @FXML
@@ -47,14 +50,17 @@ public class PreScreenController {
     @FXML
     protected void onSignUpClick() throws SQLException {
         SQLDriver sqld = new SQLDriver();
-        Connection conn = sqld.createConnection("25.54.165.230","3306","csc340","testuser", "1234");
-        sqld.signUpUser(conn, user_signup_field.getText().toString(), pass_signup_field.getText().toString());
+        sqld.signUpUser(sqld.conn, user_signup_field.getText().toString(), pass_signup_field.getText().toString());
     }
 
     @FXML
-    protected void onLoginClick() {
-        MainApplication.mainStage.setScene(MainApplication.dashboardScene);
-        MainApplication.mainStage.show();
+    protected void onLoginClick() throws SQLException {
+        SQLDriver sqld = new SQLDriver();
+        Boolean correctInfo = sqld.loginUser(sqld.conn, user_login_field.getText().toString(), user_password_field.getText().toString());
+        if(correctInfo) {
+            MainApplication.mainStage.setScene(MainApplication.dashboardScene);
+            MainApplication.mainStage.show();
+        }
     }
 
 }

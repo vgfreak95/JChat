@@ -5,6 +5,9 @@ package com.example.jchat;
 import java.sql.*;
 
 public class SQLDriver {
+    Connection conn = createConnection("25.95.108.108", "3307", "csc340", "testuser", "1234");
+    public SQLDriver() throws SQLException {
+    }
 
     public Connection createConnection(String ip, String port, String schema, String user, String pass) throws SQLException {
         String connectionFormat = String.format("jdbc:mysql://%s:%s/%s", ip, port, schema);
@@ -31,7 +34,7 @@ public class SQLDriver {
 
         // When the username doesn't exist
         statement = conn.createStatement();
-        String sqlQueryFormat = String.format("INSERT INTO user_login (username, pass, permission) VALUES ('%s', %s, 'default');", user, pass);
+        String sqlQueryFormat = String.format("INSERT INTO user_login (username, pass, permission) VALUES ('%s', '%s', 'default');", user, pass);
         statement.executeUpdate(sqlQueryFormat);
         return true;
 
@@ -57,5 +60,20 @@ public class SQLDriver {
             e.printStackTrace();
 //            System.out.println("There was an error trying to connect to the database...\n" + e);
         }
+    }
+    public Boolean loginUser(Connection conn, String username, String password) throws SQLException {
+        /**
+         * iterate all users and passwords until match found
+         * if no found return false
+         * if return true
+         */
+        Statement statement = conn.createStatement();
+        ResultSet result = statement.executeQuery("SELECT * FROM user_login;");
+        while(result.next()){
+            if(result.getString("username").equals(username) &&  result.getString("pass").equals(password)){
+                return true;
+            }
+        }
+        return false;
     }
 }
