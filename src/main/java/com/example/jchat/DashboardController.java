@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import com.example.jchat.MainApplication;
 
 public class DashboardController {
+
     @FXML
     protected void onNewChatClick() {
         MainApplication.mainStage.setScene(MainApplication.chatroomScene);

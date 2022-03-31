@@ -1,30 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="chat^anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="1080.0" styleClass="jchat-anchor" stylesheets="@app.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jchat.DashboardController">
+<AnchorPane id="chat^anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="1280.0" styleClass="jchat-anchor" stylesheets="@app.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jchat.ChatroomController">
    <children>
-      <Button layoutX="14.0" layoutY="920.0" mnemonicParsing="false" onMouseClicked="#onReturnToDashboardClick" styleClass="jchat-dash-button" stylesheets="@app.css" text="Return To Dashboard" />
-      <Label layoutX="6.0" layoutY="7.0" styleClass="jchat-label" stylesheets="@app.css" text="Chat Room">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
-      <TextField id="message-field" layoutX="53.0" layoutY="830.0" prefHeight="83.0" prefWidth="975.0" promptText="Type here..." styleClass="jchat-textfield" stylesheets="@app.css" />
-      <Button id="send" layoutX="944.0" layoutY="920.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="84.0" styleClass="jchat-dash-button" stylesheets="@app.css" text="Send">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <ScrollPane blendMode="OVERLAY" layoutX="28.0" layoutY="136.0" prefHeight="683.0" prefWidth="998.0">
-         <content>
-            <Label prefHeight="39.0" prefWidth="149.0" text="Displays Messages" textFill="RED" />
-         </content>
-      </ScrollPane>
+      <VBox id="dash-vbox" alignment="CENTER" layoutX="9.0" layoutY="17.0" prefHeight="933.0" prefWidth="346.0" styleClass="jchat-dash-vbox">
+         <children>
+            <Button id="newChat" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onNewChatClick" prefHeight="120.0" styleClass="jchat-dash-button" text="New Chat">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button id="viewOpenRooms" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onViewOpenRoomsClick" prefHeight="120.0" styleClass="jchat-dash-button" text="View Open Rooms">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button id="modifyUserPermission" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onModifyUserPermissionsClick" prefHeight="120.0" styleClass="jchat-dash-button" text="Modify User Permissions">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button id="suspendAccess" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onSuspendUserAccess" prefHeight="120.0" styleClass="jchat-dash-button" text="Suspend User Access">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button id="viewReportLogs" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onViewReportLogsClick" prefHeight="120.0" styleClass="jchat-dash-button" text="View Reported Logs">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button id="viewMembers" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onViewMembersClick" prefHeight="120.0" styleClass="jchat-dash-button" text="View Members">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <Pane id="pane" fx:id="pane" layoutX="355.0" layoutY="18.0" prefHeight="943.0" prefWidth="926.0">
+         <children>
+            <TextField id="message-field" layoutX="20.0" layoutY="837.0" prefHeight="83.0" prefWidth="886.0" promptText="Type here..." styleClass="jchat-textfield" stylesheets="@app.css" />
+            <Label layoutX="20.0" prefHeight="39.0" prefWidth="250.0" styleClass="jchat-label" stylesheets="@app.css" text="Chat Room Name">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <ScrollPane id="scrollPane" fx:id="scrollPane" hbarPolicy="NEVER" layoutX="20.0" layoutY="47.0" minViewportWidth="200.0" onMouseClicked="#onScrollUp" onScroll="#onScrollDown" onScrollStarted="#onScrollUp" prefHeight="778.0" prefWidth="886.0" styleClass="jchat-anchor" stylesheets="@app.css" vbarPolicy="ALWAYS" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

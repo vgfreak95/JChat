@@ -5,6 +5,7 @@ plugins {
     id 'org.beryx.jlink' version '2.24.1'
 }
 
+
 group 'com.example'
 version '1.0-SNAPSHOT'
 
@@ -34,8 +35,9 @@ javafx {
     modules = ['javafx.controls', 'javafx.fxml']
 }
 
-dependencies {
 
+dependencies {
+    implementation('mysql:mysql-connector-java:8.0.28')
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 

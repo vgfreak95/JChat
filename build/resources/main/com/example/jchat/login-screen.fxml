@@ -4,6 +4,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -15,7 +17,6 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Label id="logo" layoutX="69.0" layoutY="64.0" styleClass="jchat-label" stylesheets="@app.css" text="JChat" />
       <Label id="createAccount" layoutX="92.0" layoutY="542.0" onMouseClicked="#onCreateAccountClick" styleClass="hyper-link-label" stylesheets="@app.css" text="Create New Account" textFill="#2b8c26" underline="true">
          <font>
             <Font size="24.0" />
@@ -24,5 +25,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Label>
+      <ImageView fitHeight="169.0" fitWidth="297.0" layoutX="52.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/JChatLogo.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
