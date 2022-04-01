@@ -1,21 +1,19 @@
 package com.example.jchat;
 
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseButton;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class ViewRoomController extends DashboardController implements Initializable {
+public class ViewRoomController extends ChatroomController implements Initializable {
 
     @FXML private TableView<Room> tableView;
     @FXML private TableColumn<Room, String> roomColumn;
@@ -24,10 +22,15 @@ public class ViewRoomController extends DashboardController implements Initializ
 
 
     @FXML
-    public void onTableClick() {
+    public void onTableClick() throws IOException {
         ObservableList<Room> roomList;
         roomList = tableView.getSelectionModel().getSelectedItems();
-        System.out.println(roomList.get(0).getRoomName());
+
+//        ChatroomController chr = MainApplication.openLoader.getController();
+//        chr.setLabelName("bruh");
+//        chr.setChatRoom(roomList.get(0));
+
+        onOpenRoomClick(roomList.get(0));
     }
 
     public void printRow(Room item) {

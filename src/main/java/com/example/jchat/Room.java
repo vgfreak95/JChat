@@ -22,17 +22,14 @@ public class Room {
         this.capacity = capacity;
     }
 
-//    public String getRoomId() {
-//        return this.room_id;
-//    }
+    @Override
+    public String toString() {
+        return this.roomName + " " + this.createTime + " " + this.capacity;
+    }
 
     public String getRoomName() {
         return this.roomName;
     }
-//
-//    public String getKingId() {
-//        return this.king_id;
-//    }
 
     public String getCreateTime() {
         return this.createTime;
@@ -40,6 +37,18 @@ public class Room {
 
     public String getCapacity() {
         return this.capacity;
+    }
+
+    public void setRoomName(String name) {
+        this.roomName = name;
+    }
+
+    public void setCreateTime(String time) {
+        this.createTime = time;
+    }
+
+    public void setCapacity(String capacity) {
+        this.capacity = capacity;
     }
 
 }

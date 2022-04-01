@@ -1,15 +1,12 @@
 package com.example.jchat;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 
 // local classes
-import com.example.jchat.MainApplication;
-import com.example.jchat.DashboardController;
-import com.example.jchat.User;
-import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -18,14 +15,48 @@ import java.net.Socket;
 
 public class ChatroomController extends DashboardController {
 
-    @FXML
-    private ScrollPane scrollPane;
+    private FXMLLoader chatRoomLoader;
 
+    @FXML private ScrollPane scrollPane;
+    @FXML private Label roomNameLabel;
     @FXML
     private ListView listView;
 
     @FXML
     private TextField message_field;
+
+
+    private Room chatRoom;
+    private String name;
+
+    public void setLabelName(String name) {
+        this.roomNameLabel.setText(name);
+    }
+
+    public void setChatRoom(Room newRoom) {
+        this.chatRoom = new Room(
+                newRoom.getRoomName(),
+                newRoom.getCreateTime(),
+                newRoom.getCapacity()
+        );
+        System.out.println(newRoom.toString());
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    protected void onOpenRoomClick(Room room) throws IOException {
+        System.out.println("Setting Chatroom");
+
+        chatRoomLoader = new FXMLLoader(getClass().getResource("chatroom.fxml"));
+        Parent chatRoomRoot = chatRoomLoader.load();
+        Scene chatRoomScene = new Scene(chatRoomRoot, 1280, 960);
+        ChatroomController chatroomController = chatRoomLoader.getController();
+        chatroomController.setLabelName(room.getRoomName());
+        MainApplication.mainStage.setScene(chatRoomScene);
+        MainApplication.mainStage.show();
+    }
 
 
     @FXML
@@ -43,24 +74,11 @@ public class ChatroomController extends DashboardController {
         listView.scrollTo(listView.getItems().size()-1);
     }
 
-    @FXML
-    public void onScrollUp() {
-        System.out.println(scrollPane.getChildrenUnmodifiable());
-//        double currentValue = pane.scrollPane.getVvalue();
-//        System.out.println(currentValue);
-//        if (currentValue > 0) {
-//            scrollPane.setVvalue(currentValue - 0.1f);
-//        }
-    }
 
-    @FXML
-    public void onScrollDown() {
-//        double currentValue = scrollPane.getVvalue();
-//        System.out.println(currentValue);
-//        if (currentValue < 1) {
-//            scrollPane.setVvalue(currentValue + 0.1f);
-//        }
-
-    }
-
+//    @Override
+//    public void initialize(URL location, ResourceBundle resources) {
+//        System.out.println("This was called");
+//        this.roomNameLabel = new Label();
+//
+//    }
 }
