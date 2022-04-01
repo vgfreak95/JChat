@@ -2,22 +2,31 @@ package com.example.jchat;
 
 import java.io.*;
 import java.net.*;
-import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Server extends SocketAddress {
+//    public Set<InetAddress> socketSet = new HashSet<InetAddress>();
 
     public static void main(String[] args){
+        ArrayList<ServerWork> runnableList = new ArrayList<ServerWork>();
         int portNumber = 8000;
         try{
             ServerSocket serverSocket = new ServerSocket(portNumber);
             while(true){
                 Socket clientSocket = serverSocket.accept();
 
-                System.out.println("Connection established with: " +clientSocket);
                 OutputStream outputStream = clientSocket.getOutputStream();
-                outputStream.write("FUCK this did work\r\n".getBytes());
-                ServerWork work = new ServerWork(clientSocket);
-                work.start();
+                //store in sql database
+                //send the message back to all clients in room
+
+                ServerWork svr = new ServerWork(clientSocket);
+                Runnable work = svr;
+                Thread thr = new Thread(work);
+                runnableList.add(svr);
+                thr.start();
+//                System.out.println(runnableList);
             }
         } catch (IOException e) {
             e.printStackTrace();

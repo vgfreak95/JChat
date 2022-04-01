@@ -8,7 +8,7 @@ public class SQLDriver {
 
     private String username;
 
-    Connection conn = createConnection("localhost", "3307", "csc340", "root", "");
+    Connection conn = createConnection("25.95.108.108", "3307", "csc340", "testuser", "1234");
     public SQLDriver() throws SQLException {
     }
 

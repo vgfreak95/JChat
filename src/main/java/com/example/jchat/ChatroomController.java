@@ -11,6 +11,10 @@ import com.example.jchat.DashboardController;
 import com.example.jchat.User;
 import javafx.scene.layout.Pane;
 
+import java.io.*;
+import java.net.InetAddress;
+import java.net.Socket;
+
 public class ChatroomController extends DashboardController {
 
     @FXML
@@ -24,31 +28,26 @@ public class ChatroomController extends DashboardController {
 
 
     @FXML
-    public void sendMessage() {
-        listView.getItems().add(User.username + ": " + message_field.getText());
+    public void sendMessage() throws IOException {
+        Socket socket = new Socket("25.50.70.173", 8000);
+        Socket cSocket = new Socket(InetAddress.getLocalHost(), 8000);
+        OutputStream out = socket.getOutputStream();
+        String message = User.username + ": " + message_field.getText() + " " + cSocket.getLocalAddress() + " roomID";
+        PrintWriter writer = new PrintWriter(out, true);
+        writer.println(message);
+        /**
+         * user joins room
+         * chatrooms database updates with members in room by userid "online"
+         * add columns for active roomid online
+         */
+
+        InputStreamReader inputStreamReader = new InputStreamReader(socket.getInputStream());
+        BufferedReader buffer = new BufferedReader(inputStreamReader);
+        String msgFromClient = buffer.readLine();
+
+        listView.getItems().add(msgFromClient);
         message_field.clear();
         message_field.requestFocus();
         listView.scrollTo(listView.getItems().size()-1);
     }
-
-    @FXML
-    public void onScrollUp() {
-        System.out.println(scrollPane.getChildrenUnmodifiable());
-//        double currentValue = pane.scrollPane.getVvalue();
-//        System.out.println(currentValue);
-//        if (currentValue > 0) {
-//            scrollPane.setVvalue(currentValue - 0.1f);
-//        }
-    }
-
-    @FXML
-    public void onScrollDown() {
-//        double currentValue = scrollPane.getVvalue();
-//        System.out.println(currentValue);
-//        if (currentValue < 1) {
-//            scrollPane.setVvalue(currentValue + 0.1f);
-//        }
-
-    }
-
 }
