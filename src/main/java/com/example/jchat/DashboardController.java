@@ -15,14 +15,7 @@ import java.util.ArrayList;
 
 public class DashboardController {
 
-    @FXML
-    private TableView<Room> table_view;
-    @FXML
-    private TableColumn<Room, String> roomColumn;
-    @FXML
-    private TableColumn<Room, String> timeColumn;
-    @FXML
-    private TableColumn<Room, String> capacityColumn;
+
 
     @FXML
     protected void onNewChatClick() {
@@ -48,22 +41,8 @@ public class DashboardController {
     }
     @FXML
     protected void onViewOpenRoomsClick() throws SQLException {
-
         MainApplication.mainStage.setScene(MainApplication.openRoomsScene);
         MainApplication.mainStage.show();
-
-        SQLDriver sqld = new SQLDriver();
-        // Create all the columns for the table
-        roomColumn.setCellValueFactory(new PropertyValueFactory<>("roomname"));
-        timeColumn.setCellValueFactory(new PropertyValueFactory<>("create_time"));
-        capacityColumn.setCellValueFactory(new PropertyValueFactory<>("capacity"));
-
-        ArrayList<Room> rooms = sqld.viewRooms(sqld.conn);
-
-//        for (Room room : rooms) {
-        table_view.getItems().add(new Room("bruh","bruh", "bruh"));
-//        }
-
     }
     @FXML
     protected void onSuspendUserAccess() {

@@ -15,54 +15,54 @@
     -fx-background-color: linear-gradient(to bottom, #1dbbdd44, #93f9b944);
     */
     -fx-background-color: rgb(114, 70, 143);
+    /*
     -fx-background-radius: 7px 7px 0px 0px;
     -fx-background-insets: 0 11px 0 0;
+    */
     -fx-padding: 0 0 5px 0;
+    -fx-font-size: 30px;
 }
 
-.table-view .table-cell{
+.table-view : focus {
     -fx-border-color: transparent;
-    -fx-padding: 2 0 2 10px;
-}
-.table-row-cell: hover {
-    -fx-background-color: #93f9b911;
-    -fx-text-background-color: red;
-}
-.table-row-cell: odd{
-    -fx-background-color: #93f9b911;
-    -fx-background-insets: 0, 0 0 1 0;
-    -fx-padding: 0.0em;
-}
-.table-row-cell: even{
-    -fx-background-color: #1dbbdd11;
-    -fx-background-insets: 0, 0 0 1 0;
-    -fx-padding: 0.0em;
 }
 
 .table-view .column-header-background .filler {
     -fx-background-color: transparent;
     -fx-background-color: rgb(41, 43, 47);
     -fx-box-border: transparent;
-    -fx-font-size: 30px;
 }
 
 .table-view .table-cell{
     -fx-border-color: transparent;
     -fx-padding: 2 0 2 10px;
+    -fx-text-fill: rgb(230, 230, 230);
+    -fx-alignment: CENTER;
 }
 .table-row-cell: hover {
     -fx-background-color: #93f9b911;
     -fx-text-background-color: red;
+    -fx-fill-text: red;
 }
 .table-row-cell: odd{
-    -fx-background-color: #93f9b911;
+
+    -fx-background-color: rgb(40, 40, 40);
     -fx-background-insets: 0, 0 0 1 0;
     -fx-padding: 0.0em;
+    -fx-font-size: 30px;
+    -fx-text-fill: rgb(230, 230, 230);
 }
 .table-row-cell: even{
-    -fx-background-color: #1dbbdd11;
+    -fx-background-color: rgb(45, 45, 45);
     -fx-background-insets: 0, 0 0 1 0;
     -fx-padding: 0.0em;
+    -fx-font-size: 30px;
+    -fx-text-fill: rgb(230, 230, 230);
+
+}
+
+.table-row-cell: highlighted {
+    -fx-text-color: rgb(200, 200, 200);
 }
 
 .jchat-listview {
