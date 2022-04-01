@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.Arrays;
 //import com.mysql.cj.jdbc.Driver;
 
 
@@ -42,6 +43,10 @@ public class MainApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException, SQLException {
+
+        String strxd = "Hi there my guy 24.456.677.234 socketInfo";
+        String[] strArr = strxd.split(" ");
+        System.out.println(strArr[strArr.length-2]);
 
         GuiColors guiColors = new GuiColors();
         int preScreenWidth = 400, preScreenHeight = 600;

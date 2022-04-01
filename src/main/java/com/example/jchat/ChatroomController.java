@@ -11,6 +11,11 @@ import com.example.jchat.DashboardController;
 import com.example.jchat.User;
 import javafx.scene.layout.Pane;
 
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.net.Socket;
+
 public class ChatroomController extends DashboardController {
 
     @FXML
@@ -24,7 +29,14 @@ public class ChatroomController extends DashboardController {
 
 
     @FXML
-    public void sendMessage() {
+    public void sendMessage() throws IOException {
+        Socket socket = new Socket("25.50.70.173", 8000);
+        OutputStream out = socket.getOutputStream();
+        String message = User.username + ": " + message_field.getText() + "\r\n";
+        out.write(message.getBytes());
+        PrintWriter writer = new PrintWriter(out, true);
+        writer.println("IDK");
+
         listView.getItems().add(User.username + ": " + message_field.getText());
         message_field.clear();
         message_field.requestFocus();

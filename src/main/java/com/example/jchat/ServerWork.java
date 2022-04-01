@@ -7,8 +7,8 @@ import java.net.Socket;
 
 import java.nio.charset.StandardCharsets;
 
-public class ServerWork extends Thread implements Runnable{
-    private final Socket clientSocket;
+public class ServerWork extends Thread implements Runnable {
+    public final Socket clientSocket;
 
     public ServerWork(Socket clientSocket) {
         this.clientSocket = clientSocket;
@@ -25,6 +25,7 @@ public class ServerWork extends Thread implements Runnable{
         }
     }
     private void handleClientSockets() throws IOException, InterruptedException{
+
         InputStream inputStream = clientSocket.getInputStream();
         OutputStream outputStream = clientSocket.getOutputStream();
 

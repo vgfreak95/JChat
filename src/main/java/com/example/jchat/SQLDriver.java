@@ -2,7 +2,16 @@ package com.example.jchat;
 
 
 // SQL Imports
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.TableColumn;
+
 import java.sql.*;
+import java.util.ArrayList;
+
+import com.example.jchat.Room;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class SQLDriver {
 
@@ -23,6 +32,7 @@ public class SQLDriver {
             return conn;
     }
 
+
     public Boolean signUpUser(Connection conn, String user, String pass) throws SQLException {
         Statement statement = conn.createStatement();
         ResultSet res = statement.executeQuery("SELECT * FROM user_login");
@@ -41,6 +51,26 @@ public class SQLDriver {
         statement.executeUpdate(sqlQueryFormat);
         this.username = user;
         return true;
+
+    }
+
+    public ArrayList<Room> viewRooms(Connection conn) throws SQLException {
+//        final ObservableList<String> data = FXCollections.observableArrayList();
+        ArrayList<Room> roomList = new ArrayList<Room>();
+        Statement statement = conn.createStatement();
+        ResultSet result = statement.executeQuery("SELECT * FROM room");
+
+        // Add the columns to the table
+        while (result.next()) {
+            String room_name = result.getString("roomname");
+            String create_time = result.getString("create_time");
+            String capacity = result.getString("capacity");
+            roomList.add(new Room(room_name, create_time, capacity));
+        }
+
+        return roomList;
+
+
 
     }
 
