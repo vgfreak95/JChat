@@ -53,11 +53,11 @@ public class ChatroomController extends DashboardController{
              * add columns for active roomid online
              */
 
-//            InputStreamReader inputStreamReader = new InputStreamReader(socket.getInputStream());
-//            BufferedReader buffer = new BufferedReader(inputStreamReader);
-//            String msgFromClient = buffer.readLine();
+            InputStreamReader inputStreamReader = new InputStreamReader(socket.getInputStream());
+            BufferedReader buffer = new BufferedReader(inputStreamReader);
+            String msgFromClient = buffer.readLine();
 
-//            listView.getItems().add(msgFromClient);
+            listView.getItems().add(msgFromClient);
 //        Platform.runLater(new Runnable() {
 //            @Override
 //            public void run() {
@@ -67,7 +67,7 @@ public class ChatroomController extends DashboardController{
 //                listView.scrollTo(listView.getItems().size() - 1);
 //            }
 //        });
-            listView.getItems().add(message_field.getText());
+//            listView.getItems().add(message_field.getText());
             message_field.clear();
             message_field.requestFocus();
             listView.scrollTo(listView.getItems().size() - 1);
