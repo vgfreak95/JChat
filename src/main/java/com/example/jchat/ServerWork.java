@@ -38,7 +38,7 @@ public class ServerWork extends Server implements Runnable{
         String msgTwo = new String("");
 
             for(int i = 0; i < msg.length-2; i++){
-            msgTwo = msgTwo + msg[i];
+            msgTwo = msgTwo + " " + msg[i];
         }
 
         PrintWriter writer = new PrintWriter(outputStream, true);

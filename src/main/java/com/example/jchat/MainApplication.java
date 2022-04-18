@@ -13,7 +13,7 @@ import java.sql.SQLException;
 
 
 
-public class MainApplication extends Application {
+public class MainApplication extends Application{
 
     public static Connection conn;
 
@@ -83,4 +83,5 @@ public class MainApplication extends Application {
     public static void main(String[] args) {
         launch();
     }
+
 }

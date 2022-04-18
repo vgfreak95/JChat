@@ -8,7 +8,7 @@ public class SQLDriver {
 
     private String username;
 
-    Connection conn = createConnection("25.95.108.108", "3307", "csc340", "testuser", "1234");
+    Connection conn = createConnection("aws-csc-340.cci2srkkj23u.us-east-2.rds.amazonaws.com", "3306", "csc340", "admin", "awscsc340");
     public SQLDriver() throws SQLException {
     }
 
