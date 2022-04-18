@@ -20,7 +20,7 @@
     -fx-background-insets: 0 11px 0 0;
     */
     -fx-padding: 0 0 5px 0;
-    -fx-font-size: 30px;
+    -fx-font-size: 20px;
 }
 
 .table-view : focus {

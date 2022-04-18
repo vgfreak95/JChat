@@ -16,9 +16,9 @@
                     <font>
                         <Font size="22.0" />
                     </font>
-               <graphic>
-                  <Button mnemonicParsing="false" text="Suspend" textFill="RED" />
-               </graphic>
+                    <graphic>
+                        <Button mnemonicParsing="false" text="Suspend" textFill="RED" />
+                    </graphic>
                 </Label>
             </content>
         </ScrollPane>

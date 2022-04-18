@@ -33,10 +33,10 @@ public class ServerWork extends Thread implements Runnable {
         String textLine;
         while((textLine = reader.readLine()) != null){
             if ("exit".equalsIgnoreCase(textLine)){
-               break;
-           }
-           String message = "You said: " + textLine + "\r\n";
-           outputStream.write(message.getBytes());
+                break;
+            }
+            String message = "You said: " + textLine + "\r\n";
+            outputStream.write(message.getBytes());
         }
 
         clientSocket.close();

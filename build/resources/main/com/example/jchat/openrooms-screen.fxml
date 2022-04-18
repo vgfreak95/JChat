@@ -9,46 +9,64 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="chat^anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="1280.0" styleClass="jchat-anchor" stylesheets="@app.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jchat.ViewRoomController">
+<AnchorPane id="chat^anchor" maxHeight="-Infinity"
+            maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="960.0" prefWidth="1280.0" styleClass="jchat-anchor"
+            stylesheets="@app.css" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.jchat.ViewRoomController">
    <children>
-      <Label layoutX="390.0" layoutY="45.0" prefHeight="39.0" prefWidth="250.0" styleClass="jchat-label" stylesheets="@app.css" text="Chat Room Name">
+      <Label layoutX="390.0" layoutY="45.0" prefHeight="39.0"
+             prefWidth="346.0" styleClass="jchat-label" stylesheets="@app.css"
+             text="View Open Rooms">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <TableView id="table" fx:id="tableView" editable="true" layoutX="371.0" layoutY="169.0" onMouseClicked="#onTableClick" prefHeight="694.0" prefWidth="895.0" stylesheets="@app.css">
+      <TableView id="table" fx:id="tableView" editable="true"
+                 layoutX="371.0" layoutY="169.0" onMouseClicked="#onTableClick"
+                 prefHeight="694.0" prefWidth="895.0" stylesheets="@app.css">
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
          <columns>
-            <TableColumn id="roomColumn" fx:id="roomColumn" prefWidth="75.0" text="Room Name" />
-            <TableColumn id="timeColumn" fx:id="timeColumn" prefWidth="75.0" text="Time Created" />
-            <TableColumn id="capacityColumn" fx:id="capacityColumn" prefWidth="75.0" text="Room Capacity" />
+            <TableColumn id="roomColumn" fx:id="idColumn"
+                         prefWidth="275.0" text="Room ID" />
+            <TableColumn id="timeColumn" fx:id="nameColumn"
+                         prefWidth="275.0" text="Room Name" />
+            <TableColumn id="capacityColumn" fx:id="operationColumn"
+                         prefWidth="45.0" text="Operation">
+               <columns>
+                  <TableColumn fx:id="stopColumn" prefWidth="20.0" text="S" />
+                  <TableColumn fx:id="removeColumn" prefWidth="20.0" text="R" />
+               </columns>
+            </TableColumn>
          </columns>
       </TableView>
-      <VBox id="dash-vbox" alignment="CENTER" layoutX="9.0" layoutY="17.0" prefHeight="933.0" prefWidth="346.0" styleClass="jchat-dash-vbox">
+      <VBox id="dash-vbox" alignment="CENTER" layoutX="9.0"
+            layoutY="17.0" prefHeight="933.0" prefWidth="346.0"
+            styleClass="jchat-dash-vbox">
          <children>
-            <Button id="viewOpenRooms" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onViewOpenRoomsClick" prefHeight="120.0" styleClass="jchat-dash-button" text="View Open Rooms">
+            <Button id="viewOpenRooms" alignment="CENTER"
+                    maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                    onMouseClicked="#onViewOpenRoomsClick" prefHeight="120.0"
+                    styleClass="jchat-dash-button" text="View Open Rooms">
                <VBox.margin>
                   <Insets left="10.0" right="10.0" />
                </VBox.margin>
             </Button>
-            <Button id="modifyUserPermission" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onModifyUserPermissionsClick" prefHeight="120.0" styleClass="jchat-dash-button" text="Modify User Permissions">
+            <Button id="viewMembers" alignment="CENTER"
+                    maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                    onMouseClicked="#onViewMembersClick" prefHeight="120.0"
+                    styleClass="jchat-dash-button" text="View Members">
                <VBox.margin>
                   <Insets left="10.0" right="10.0" />
                </VBox.margin>
             </Button>
-            <Button id="suspendAccess" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onSuspendUserAccess" prefHeight="120.0" styleClass="jchat-dash-button" text="Suspend User Access">
-               <VBox.margin>
-                  <Insets left="10.0" right="10.0" />
-               </VBox.margin>
-            </Button>
-            <Button id="viewReportLogs" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onViewReportLogsClick" prefHeight="120.0" styleClass="jchat-dash-button" text="View Reported Logs">
-               <VBox.margin>
-                  <Insets left="10.0" right="10.0" />
-               </VBox.margin>
-            </Button>
-            <Button id="viewMembers" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#onViewMembersClick" prefHeight="120.0" styleClass="jchat-dash-button" text="View Members">
+            <Button id="viewReportLogs" alignment="CENTER"
+                    maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                    onMouseClicked="#onViewReportLogsClick" prefHeight="120.0"
+                    styleClass="jchat-dash-button" text="View Reported Logs">
                <VBox.margin>
                   <Insets left="10.0" right="10.0" />
                </VBox.margin>

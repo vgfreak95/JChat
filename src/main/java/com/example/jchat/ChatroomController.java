@@ -37,7 +37,7 @@ public class ChatroomController extends DashboardController {
         this.chatRoom = new Room(
                 newRoom.getRoomName(),
                 newRoom.getCreateTime(),
-                newRoom.getCapacity()
+                newRoom.getCapacity(),""
         );
         System.out.println(newRoom.toString());
     }
