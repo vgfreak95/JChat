@@ -79,7 +79,7 @@ public class Server2 implements Runnable {
                 something = in.readLine();
 //                System.out.println(something + " was sent");
 //                broadcast(something + " was sent by user!");
-                String message;
+//                String message;
 
                 String[] msg = something.split(" ");
                 String msgTwo = new String("");

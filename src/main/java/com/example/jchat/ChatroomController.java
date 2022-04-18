@@ -1,8 +1,10 @@
 package com.example.jchat;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
 // local classes
@@ -11,11 +13,19 @@ import com.example.jchat.DashboardController;
 import com.example.jchat.User;
 import javafx.scene.layout.Pane;
 
+import javax.swing.text.PlainDocument;
 import java.io.*;
 import java.net.InetAddress;
+import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class ChatroomController extends DashboardController {
+public class ChatroomController extends DashboardController{
+//    Socket socket = new Socket("127.0.0.1", 8000);
+//    InputStreamReader inputStreamReader = new InputStreamReader(socket.getInputStream());
+//    BufferedReader buffer = new BufferedReader(inputStreamReader);
+
 
     @FXML
     private ScrollPane scrollPane;
@@ -26,11 +36,12 @@ public class ChatroomController extends DashboardController {
     @FXML
     private TextField message_field;
 
-
     @FXML
     public void sendMessage() throws IOException {
-//        Socket socket = new Socket("25.50.70.173", 8000);
-            Socket socket = new Socket("127.0.0.1", 8000);
+        Socket socket = new Socket("127.0.0.1", 8000);
+//        Socket socket = new Socket("25.95.108.108", 8000);
+//            Socket socket = new Socket("127.0.0.1", 8000);
+
             Socket cSocket = new Socket(InetAddress.getLocalHost(), 8000);
             OutputStream out = socket.getOutputStream();
             String message = User.username + ": " + message_field.getText() + " " + cSocket.getLocalAddress() + " roomID";
@@ -42,16 +53,30 @@ public class ChatroomController extends DashboardController {
              * add columns for active roomid online
              */
 
-            InputStreamReader inputStreamReader = new InputStreamReader(socket.getInputStream());
-            BufferedReader buffer = new BufferedReader(inputStreamReader);
-            String msgFromClient = buffer.readLine();
+//            InputStreamReader inputStreamReader = new InputStreamReader(socket.getInputStream());
+//            BufferedReader buffer = new BufferedReader(inputStreamReader);
+//            String msgFromClient = buffer.readLine();
 
-            listView.getItems().add(msgFromClient);
+//            listView.getItems().add(msgFromClient);
+//        Platform.runLater(new Runnable() {
+//            @Override
+//            public void run() {
+//                listView.getItems().add(message_field.getText());
+//                message_field.clear();
+//                message_field.requestFocus();
+//                listView.scrollTo(listView.getItems().size() - 1);
+//            }
+//        });
+            listView.getItems().add(message_field.getText());
             message_field.clear();
             message_field.requestFocus();
             listView.scrollTo(listView.getItems().size() - 1);
 
     }
+
+
+
+
 //
 //    private Socket client;
 //    private BufferedReader in;
