@@ -27,7 +27,7 @@
       </Label>
       <ImageView fitHeight="169.0" fitWidth="297.0" layoutX="52.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/JChatLogo.png" />
+            <Image url="@images/JchatLogo.png" />
          </image>
       </ImageView>
    </children>
