@@ -8,9 +8,8 @@ import javafx.scene.control.*;
 
 // local classes
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintWriter;
+import java.io.*;
+import java.net.InetAddress;
 import java.net.Socket;
 
 public class ChatroomController extends DashboardController {
@@ -61,18 +60,40 @@ public class ChatroomController extends DashboardController {
 
     @FXML
     public void sendMessage() throws IOException {
-        Socket socket = new Socket("25.50.70.173", 8000);
-        OutputStream out = socket.getOutputStream();
-        String message = User.username + ": " + message_field.getText() + "\r\n";
-        out.write(message.getBytes());
-        PrintWriter writer = new PrintWriter(out, true);
-        writer.println("IDK");
+        Socket socket = new Socket("127.0.0.1", 8000);
+//        Socket socket = new Socket("25.95.108.108", 8000);
+//            Socket socket = new Socket("127.0.0.1", 8000);
 
-        listView.getItems().add(User.username + ": " + message_field.getText());
+        Socket cSocket = new Socket(InetAddress.getLocalHost(), 8000);
+        OutputStream out = socket.getOutputStream();
+        String message = User.username + ": " + message_field.getText() + " " + cSocket.getLocalAddress() + " roomID";
+        PrintWriter writer = new PrintWriter(out, true);
+        writer.println(message);
+        /**
+         * user joins room
+         * chatrooms database updates with members in room by userid "online"
+         * add columns for active roomid online
+         */
+
+        InputStreamReader inputStreamReader = new InputStreamReader(socket.getInputStream());
+        BufferedReader buffer = new BufferedReader(inputStreamReader);
+        String msgFromClient = buffer.readLine();
+
+        listView.getItems().add(msgFromClient);
+//        Platform.runLater(new Runnable() {
+//            @Override
+//            public void run() {
+//                listView.getItems().add(message_field.getText());
+//                message_field.clear();
+//                message_field.requestFocus();
+//                listView.scrollTo(listView.getItems().size() - 1);
+//            }
+//        });
+//            listView.getItems().add(message_field.getText());
         message_field.clear();
         message_field.requestFocus();
-        listView.scrollTo(listView.getItems().size()-1);
-    }
+        listView.scrollTo(listView.getItems().size() - 1);
+
 
 
 //    @Override
